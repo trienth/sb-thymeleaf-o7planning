@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List person</title>
+</head>
+
+<body>
+<div align="center">
+    <h2>Person list</h2>
+    <div>
+        <a th:href="@{/add-person}">Add new person</a>
+    </div>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Age</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="p: ${persons}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.firstName}"></td>
+            <td th:text="${p.lastName}"></td>
+            <td th:text="${p.age}"></td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+</body>
+</html>
